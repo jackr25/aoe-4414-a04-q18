@@ -21,7 +21,7 @@
 # Written by Jack Rathert
 # Other contributors: None
 
-# Test Case Input: python3 eci_to_ecef 2054 4 29 11 29 3.3 5870.038832 3389.068500 3838.027968
+# Test Case Input: python3 eci_to_ecef.py 2054 4 29 11 29 3.3 5870.038832 3389.068500 3838.027968
 
 # import Python modules
 import sys 
@@ -84,7 +84,6 @@ def JD_to_GMSTang(JDfrac):
 # Perform rotations on eci_vec
 def Rz_Theta(theta, eci_vec):
   Rz = [ [ cos(-theta), -sin(-theta),0 ], [sin(-theta), cos(-theta), 0 ], [0,0,1] ]
-  print(Rz)
   ans = npl.matrix_mult(Rz,eci_vec)
   return ans
     
